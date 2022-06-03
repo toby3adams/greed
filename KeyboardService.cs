@@ -8,8 +8,8 @@ namespace services
         private int ScaleingFactor = 10; // The Scaling Factor is a variable used to represent th size of the cell of the GUI
         //This value is used so that when the player moves it will move faster as it will increase the amount of pixels moved
         //by the player.
-        public KeyboardServices(int ScalelingFactor) { //** we may be able to use this to add and ability to increase speed.
-            this.ScaleingFactor = ScaleingFactor;
+        public KeyboardServices(int Factor) { //** we may be able to use this to add and ability to increase speed.
+            this.ScaleingFactor = Factor;
         }
 
         public objectProperties PlayerDirection() //Uses the principles of inheritance to call the Object class so that the returned 
