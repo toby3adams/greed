@@ -20,23 +20,23 @@ namespace greed.Game.Objects
         //methods
         public int getLocationX()
         {
-            return location_x;
+            return this.location_x;
         }
         
         public int getLocationY()
         {
-            return location_y;
+            return this.location_y;
         }
 
         public int getColor()
         {
-            return color;
+            return this.color;
         }
 
         public void shiftLocation(int x, int y)
         {
-            location_x += x;
-            location_y += y;
+            this.location_x += x;
+            this.location_y += y;
         }
 
 
