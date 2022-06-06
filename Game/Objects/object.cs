@@ -9,7 +9,7 @@ namespace greed.Game.Objects
         char character;
 
         //constructor
-        public objectconstructor(int location_x, int location_y, int color, char character)
+        public void objectconstructor(int location_x, int location_y, int color, char character)
         {
             this.location_x = location_x;
             this.location_y = location_y;
