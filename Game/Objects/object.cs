@@ -6,7 +6,7 @@ namespace greed.Game.Objects
         int location_x;
         int location_y;
         int color;
-        int character;
+        char character;
 
         //constructor
         public objectconstructor(int location_x, int location_y, int color, char character)
