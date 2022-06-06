@@ -1,4 +1,4 @@
-namespace objects
+namespace greed.Game.Objects
 {
     public class objectProperties //Tyler - I made it public so Keyboard Service can access your class
     {
@@ -31,6 +31,12 @@ namespace objects
         public int getColor()
         {
             return color;
+        }
+
+        public void shiftLocation(int x, int y)
+        {
+            location_x += x;
+            location_y += y;
         }
 
 
