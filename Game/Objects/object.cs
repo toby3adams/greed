@@ -6,13 +6,15 @@ namespace objects
         int location_x;
         int location_y;
         int color;
+        int character;
 
         //constructor
-        public objectProperties(int location_x, int location_y, int color)
+        public objectconstructor(int location_x, int location_y, int color, char character)
         {
             this.location_x = location_x;
             this.location_y = location_y;
             this.color = color;
+            this.character = character;
         }
         
         //methods
