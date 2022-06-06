@@ -33,6 +33,12 @@ namespace objects
             return color;
         }
 
+        public void setLocation(int x, int y)
+        {
+            location_x = x;
+            location_y = y;
+        }
+
 
         // TYLER ADDED THIS. this class allows me to pass your object class back into its self while increasing the speed of the player to update the players location. 
         public objectProperties Factoring(int factor)// the factor is used to increase the speed of the player. Increase the amount of pixels moved.
