@@ -1,4 +1,4 @@
-namespace objects
+namespace greed.Game.Objects
 {
     class player: objectProperties
     {
