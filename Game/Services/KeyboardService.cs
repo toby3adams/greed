@@ -1,5 +1,5 @@
 using Raylib_cs;
-using objects;
+using greed.Game.Objects;
 
 namespace services
 {
@@ -25,7 +25,7 @@ namespace services
                 XCoordinate = -1;
             }
 
-            objectProperties movement = new objectProperties(XCoordinate,200,15); // I need to talk to Zak about Y-COORDS AND COLOR. This will initialize the XCoordinate for the Player Character
+            (XCoordinate,200,15); // I need to talk to Zak about Y-COORDS AND COLOR. This will initialize the XCoordinate for the Player Character
             movement = movement.Factoring(ScaleingFactor); // New object initializes the values in the other class and then scales it and returns it
             // we set the movement to the new factor because it is of the class type. So we can pass it back as the value wanted. 
             return movement;

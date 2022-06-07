@@ -1,5 +1,6 @@
 namespace greed.Game.Objects
 {
+
     public class objectProperties //Tyler - I made it public so Keyboard Service can access your class
     {
         //attributes
@@ -46,7 +47,7 @@ namespace greed.Game.Objects
             int x = this.location_x * factor;
             int y = this.location_y * factor;// we may need to set the y coord to a fixed point.
     
-            return new objectProperties(x, y, 256); // We will need to talk about color and how I can implement it.
+            return new objectProperties(x, y, 256,'p'); // We will need to talk about color and how I can implement it.
             // we could make it so that as you move away from the center your color changes.
             // do we know the center point? // Or if we touch a gem or rock the player will flash a color? 
         }
