@@ -1,10 +1,12 @@
 using Raylib_cs;
 using greed.Game.Objects;
 
-namespace services
+namespace greed.Game.Services
 {
     public class KeyboardServices
     {
+
+        private int YCoordinate = 300; // set's the players y value
         private int ScaleingFactor = 10; // The Scaling Factor is a variable used to represent th size of the cell of the GUI
         //This value is used so that when the player moves it will move faster as it will increase the amount of pixels moved
         //by the player.
@@ -25,10 +27,12 @@ namespace services
                 XCoordinate = -1;
             }
 
-            (XCoordinate,200,15); // I need to talk to Zak about Y-COORDS AND COLOR. This will initialize the XCoordinate for the Player Character
-            movement = movement.Factoring(ScaleingFactor); // New object initializes the values in the other class and then scales it and returns it
-            // we set the movement to the new factor because it is of the class type. So we can pass it back as the value wanted. 
-            return movement;
+            Point direction = new Point(XCoordinate, YCoordinate);
+            direction = direction.Scale(ScaleingFactor);
+
+            return direction;
+            
+            
         }
 
 

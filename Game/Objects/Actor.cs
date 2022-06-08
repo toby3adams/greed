@@ -1,7 +1,7 @@
 namespace greed.Game.Objects
 {
 
-    public class objectProperties //Tyler - I made it public so Keyboard Service can access your class
+    public class Actor //Tyler - I made it public so Keyboard Service can access your class
     {
         //attributes
         int location_x;
@@ -10,7 +10,7 @@ namespace greed.Game.Objects
         char character;
 
         //constructor
-        public void objectconstructor(int location_x, int location_y, int color, char character)
+        public void actorConstructor(int location_x, int location_y, int color, char character)
         {
             this.location_x = location_x;
             this.location_y = location_y;
@@ -40,7 +40,9 @@ namespace greed.Game.Objects
             this.location_y += y;
         }
 
-
-        
+        public char getCharacter()
+        {
+            return this.character;
+        }
     }
 }
