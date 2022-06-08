@@ -14,7 +14,7 @@ namespace greed.Game.Services
             this.ScaleingFactor = Factor;
         }
 
-        public Point PlayerDirection() //Uses the principles of inheritance to call the Object class so that the returned 
+        public int PlayerDirection() //Uses the principles of inheritance to call the Object class so that the returned 
         //value will be initialized in the Object class
         {
             int XCoordinate = 0;
@@ -27,8 +27,8 @@ namespace greed.Game.Services
                 XCoordinate = -1;
             }
 
-            Point direction = new Point(XCoordinate, YCoordinate);
-            direction = direction.Scale(ScaleingFactor);
+            //Point direction = new Point(XCoordinate, YCoordinate);
+            int direction = XCoordinate * ScaleingFactor;
 
             return direction;    
         }
