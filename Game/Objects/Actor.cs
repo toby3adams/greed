@@ -7,7 +7,7 @@ namespace greed.Game.Objects
         int location_x;
         int location_y;
         int color;
-        string character;
+        string character = "";
 
         //constructor
         public void actorConstructor(int location_x, int location_y, int color, string character)
