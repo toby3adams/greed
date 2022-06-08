@@ -40,7 +40,7 @@ namespace greed.Game.Objects
             this.location_y += y;
         }
 
-        public char getCharacter()
+        public string getCharacter()
         {
             return this.character;
         }
