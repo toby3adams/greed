@@ -3,7 +3,7 @@ namespace greed.Game.Objects
     class Rock : Actor
     {
         //construct the player using initial values of location, color, and character
-        public rock()
+        public Rock()
         {
             actorConstructor(0, 0, 256, "@"); //Zak- Make sure to adjust the y location to the top of the screen.
             Random random = new Random();

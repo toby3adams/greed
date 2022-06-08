@@ -12,23 +12,24 @@ namespace greed.Game.Objects
             Random random = new Random();
             int RandColor=random.Next(0,100);
 
-            if (RandColor >= 25)                                //**NEED TO CHANGE COLORS TO CORRECT INTS**\\
+            //Zak make sure to get the comparison to work
+            if (RandColor >= 25 )                                //**NEED TO CHANGE COLORS TO CORRECT INTS**\\
             { //Green 
-                Color = 1;
+                Color = 4;
             }
-            else if (RandColor<=75)
+            else if (RandColor<=75 && RandColor>50)
             { //White
                 Color = 1;
                 FallSpeed = -15;
             }
-            else if (RandColor<=50)
+            else if (RandColor<=50 && Randcolor>25)
             { //Red
-                Color = 1;
+                Color = 3;
                 FallSpeed = -10;
             }
             else if (RandColor<=25)
             { //Blue
-                Color = 1;
+                Color = 5;
                 FallSpeed = -5;
             }
             actorConstructor(0, 0, RandColor, "*"); //Zak- Make sure to adjust the y location to the top of the screen.
