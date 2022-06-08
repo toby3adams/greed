@@ -13,21 +13,21 @@ namespace greed.Game.Objects
 
             if (RandColor >= 25)                                //**NEED TO CHANGE COLORS TO CORRECT INTS**\\
             { //Green 
-                Color = 1;
+                Color = 1;              // RGB 0,255,0
             }
             else if (RandColor<=75)
             { //White
-                Color = 1;
+                Color = 2;              //RGB 255,255,255
                 FallSpeed = -15;
             }
             else if (RandColor<=50)
             { //Red
-                Color = 1;
+                Color = 3;              //RGB 255, 0, 0
                 FallSpeed = -10;
             }
             else if (RandColor<=25)
             { //Blue
-                Color = 1;
+                Color = 4;
                 FallSpeed = -5;
             }
 
