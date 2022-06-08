@@ -1,11 +1,12 @@
 namespace greed.Game.Objects
 {
-    class Player: objectProperties // 
+    class player: objectProperties
     {
         //construct the player using initial values of location, color, and character
-        public void playerconstructor()
+        public player()
         {
-            objectconstructor(0, 0, 256, '#'); //Zak- starts the player at (0,0) !!!!!adjust this to the proper value when known!!!!!
+        objectconstructor(0, 0, 256, '#'); //Zak --starts the player at (0,0) !!! adjust as needed to start the player to start position !!!
+        char character = '#';
         }
     }
 }
