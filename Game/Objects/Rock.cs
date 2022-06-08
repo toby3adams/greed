@@ -1,6 +1,6 @@
 namespace greed.Game.Objects
 {
-    class rock : objectProperties
+    class Rock : objectProperties
     {
         //construct the player using initial values of location, color, and character
         public void rockconstructor()
