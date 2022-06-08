@@ -6,7 +6,8 @@ namespace greed.Game.Objects
 
         private int Color =0;
         private int FallSpeed = -1;
-        public void GemConstructor()
+
+        public Gem()
         {
             Random random = new Random();
             int RandColor=random.Next(0,100);
@@ -30,21 +31,10 @@ namespace greed.Game.Objects
                 Color = 1;
                 FallSpeed = -5;
             }
-
-
-
-            actorConstructor(0, 0, RandColor, '*'); //Zak- Make sure to adjust the y location to the top of the screen.
+            actorConstructor(0, 0, RandColor, "*"); //Zak- Make sure to adjust the y location to the top of the screen.
             
             int x = random.Next(0, 10); //Zak- make sure to adjust the range to be within the bounds of the screen.
             shiftLocation(x, 0); //Zak-this will move the rock to the random x location
-            //location_y += -1; //   <---  This may work to move the objects down the screen. if location_y is public
-
-            shiftLocation(0,FallSpeed); /// <-- move down the screen
-
-
-
-
-
         }
     }
 }
