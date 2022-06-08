@@ -22,7 +22,7 @@ namespace greed.Game.Objects
                 Color = 2;              //RGB 255,255,255
                 FallSpeed = -15;
             }
-            else if (RandColor<=50 && Randcolor>25)
+            else if (RandColor<=50 && RandColor>25)
             { //Red
                 Color = 3;              //RGB 255, 0, 0
                 FallSpeed = -10;
