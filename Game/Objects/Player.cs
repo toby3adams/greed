@@ -1,6 +1,6 @@
 namespace greed.Game.Objects
 {
-    class player: objectProperties
+    class Player: objectProperties
     {
         //construct the player using initial values of location, color, and character
         public player()
