@@ -1,4 +1,5 @@
 using Raylib_cs;
+using greed.Game.Objects;
 
 namespace greed.Game.Services{
 
@@ -46,13 +47,13 @@ namespace greed.Game.Services{
         /// <param name="actor">The actor to draw.</param>
         public void DrawActor(Actor actor)
         {
-            string text = actor.GetText();
-            int x = actor.GetPosition().GetX();
-            int y = actor.GetPosition().GetY();
-            int fontSize = actor.GetFontSize();
-            int color = actor.GetColor();
+            string text = actor.getCharacter();
+            int x = actor.getLocationX();
+            int y = actor.getLocationY();
+            // int fontSize = actor.GetFontSize();
+            int color = actor.getColor();
             Raylib_cs.Color color_r = ToRaylibColor(color);
-            Raylib.DrawText(text, x, y, fontSize, color_r);
+            Raylib.DrawText(text, x, y, 15, color_r);
         }
 
         /// <summary>
@@ -153,17 +154,18 @@ namespace greed.Game.Services{
                 return new Raylib_cs.Color(255, 0, 0, 255);
             }
             if (color == 4){//green
-            return new Raylib_cs.Color(0, 255, 0, 255);
+                return new Raylib_cs.Color(0, 255, 0, 255);
             }
             if (color == 5){//blue
-            return new Raylib_cs.Color(0, 0, 255, 255);
+                return new Raylib_cs.Color(0, 0, 255, 255);
             }
             if (color == 6){//purple
-            return new Raylib_cs.Color(187, 0, 255, 255);
+                return new Raylib_cs.Color(187, 0, 255, 255);
+            }
+            else{
+                return new Raylib_cs.Color(255, 153, 0, 255);   
             }
 
-            return new Raylib_cs.Color(r, g, b, 255);
         }
-
     }
 }
