@@ -71,6 +71,9 @@ namespace greed.Game{
             Rock rock = new Rock();
             cast.AddActor("Rock", rock);
 
+            Gem gem = new Gem();
+            cast.AddActor("Gem",gem);
+
 
 
             //banner.SetText(""); //Doug - used in Robot finds kitten, not sure what to replace with,if at all

@@ -1,3 +1,5 @@
+using greed.Game.Services;
+
 namespace greed.Game.Objects
 {
     class Gem : Actor
@@ -10,29 +12,31 @@ namespace greed.Game.Objects
         public Gem()
         {
             Random random = new Random();
-            int RandColor=random.Next(0,100);
+            int RandColor=random.Next(0,4);
 
-            //Zak make sure to get the comparison to work
-            if (RandColor >= 25 )                                //**NEED TO CHANGE COLORS TO CORRECT INTS**\\
-            { //Green 
-                Color = 1;              // RGB 0,255,0
-            }
-            else if (RandColor<=75 && RandColor>50)
+            if (RandColor == 0 )                                
             { //White
-                Color = 2;              //RGB 255,255,255
+                Color = 1;              
+            }
+            else if (RandColor==1)
+            { //Red
+                Color = 3;              
                 this.Speed = -15;
             }
-            else if (RandColor<=50 && RandColor>25)
-            { //Red
-                Color = 3;              //RGB 255, 0, 0
+            else if (RandColor==2)
+            { //Green
+                Color = 4;              
                 this.Speed = -10;
             }
-            else if (RandColor<=25)
+            else if (RandColor==3)
             { //Blue
-                Color = 4;
+                Color = 5;
                 this.Speed = -5;
             }
-            actorConstructor(0, 0, RandColor, "*"); //Zak- Make sure to adjust the y location to the top of the screen.
+            
+            actorConstructor(0, 0, Color, "*"); //Zak- Make sure to adjust the y location to the top of the screen.
+
+            //ToRaylibColor(Color);
             
             int x = random.Next(0, 625); //Zak- make sure to adjust the range to be within the bounds of the screen.
             shiftLocation(x, 0); //Zak-this will move the rock to the random x location
