@@ -34,12 +34,10 @@ namespace greed.Game.Objects
                 this.Speed = -5;
             }
             
-            actorConstructor(0, 0, Color, "*"); //Zak- Make sure to adjust the y location to the top of the screen.
-
-            //ToRaylibColor(Color);
-            
+            actorConstructor(0, 0, Color, "*"); //Zak- Make sure to adjust the y location to the top of the screen.           
             int x = random.Next(0, 625); //Zak- make sure to adjust the range to be within the bounds of the screen.
             shiftLocation(x, 0); //Zak-this will move the rock to the random x location
+
             Actor actor = new Actor();
             actor.FallSpeed = this.Speed;
         }
