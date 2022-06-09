@@ -7,7 +7,7 @@ namespace greed.Game.Services
     {
 
         private int YCoordinate = 300; // set's the players y value
-        private int ScaleingFactor = 15; // The Scaling Factor is a variable used to represent th size of the cell of the GUI
+        private int ScaleingFactor = 1; // The Scaling Factor is a variable used to represent th size of the cell of the GUI
         //This value is used so that when the player moves it will move faster as it will increase the amount of pixels moved
         //by the player.
         public KeyboardServices(int Factor) { //** we may be able to use this to add and ability to increase speed.

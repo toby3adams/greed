@@ -41,14 +41,14 @@ namespace greed.Game{
                 /*
                 **************Doug - Im assuming this will be where we will need code for creating new gems and rocks, hoping to dream something up tonight.
                 */
-                GetInputs(cast, keyBoard);
+                GetInputs(player, keyBoard);
                 DoUpdates(cast, video);
                 DoOutputs(cast, video);
 
             }        
         }
-        private void GetInputs(Cast cast, KeyboardServices keyBoard){
-            Actor player = cast.GetFirstActor("player"); // pulls player from front of cast list, with appropriate starting attributes
+        private void GetInputs(Actor player, KeyboardServices keyBoard){
+            // Actor player = cast.GetFirstActor("player"); // pulls player from front of cast list, with appropriate starting attributes
             //Point velocity = keyBoard.GetDirection();
             player.shiftLocation(keyBoard.PlayerDirection(), 0); // Doug - takes keyboard input for player X coordinate shift from KeyboardService
             //player.SetVelocity(velocity);     // used in Robot finds kitten, but not currently in our actor class
