@@ -23,7 +23,7 @@ namespace greed.Game.Services
                 XCoordinate = 1;
             }
 
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) { //if the Left Arrow is pressed it will add a -1 to move the player left
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) { //if the Left Arrow is pressed it will add a -1 to move the player left // Doug - changed this from KEY_RIGHT to KEY_LEFT 6/8 2115hrs
                 XCoordinate = -1;
             }
 

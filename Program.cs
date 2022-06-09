@@ -10,15 +10,9 @@ namespace greed{
     class Program {
         
         static void Main(string[] args)
-        {
-            private int cellSize = 15;
-            private string caption = "Greed";
-            private int width = 640;
-            private int height = 480;
-            private int frameRate = 0;
-            private bool debug = false;
-            Cast cast = new Cast();
+        { 
             Director director = new Director();
+            director.StartGame();
         }
     }
 }
