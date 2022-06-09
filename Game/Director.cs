@@ -19,7 +19,7 @@ namespace greed.Game{
             private string caption = "Greed";
             private int width = 640;
             private int height = 480;
-            private int frameRate = 0;
+            private int frameRate = 15;
             private bool debug = false;
         public Director(){
             /*this.keyBoard = keyBoard;

@@ -40,6 +40,12 @@ namespace greed.Game.Objects
         {
             this.location_x += x;
             this.location_y += y;
+            if (this.location_x > 625){
+                this.location_x = 625;
+            }
+            if (this.location_x < 0){
+                this.location_x = 0;
+            }
         }
 
         public string getCharacter()
