@@ -62,24 +62,24 @@ namespace greed.Game{
             int maxX = video.GetWidth();
             int maxY = video.GetHeight();
             //player.MoveNext(maxX, maxY);
-            player.shiftLocation(maxX, maxY);
+            // player.shiftLocation(maxX, maxY);
 
-            foreach (Actor actor in Rocks_Gems)
-            {
-                if (player.getLocationX().Equals(actor.getLocationX()))
-                {
-                    if(actor == "rock") // Doug - red and squigly, hoping to use this logic to do something magical when the player collides with a gem
-                    {
-                        Rock rock = (Rock) actor; // Doug - not sure if this is correct, but it's not red and squigly, so thats a plus
-                    } else if (actor == "gem") // Doug - red and squigly, hoping to use this logic to do something magical when the player collides with a gem
-                    {
-                        Gem gem = (Gem) actor; // Doug - not sure if this is correct, but it's not red and squigly, so thats a plus
-                    }
+            // foreach (Actor actor in Rocks_Gems)
+            // {
+            //     if (player.getLocationX().Equals(actor.getLocationX()))
+            //     {
+            //         if(actor == "rock") // Doug - red and squigly, hoping to use this logic to do something magical when the player collides with a gem
+            //         {
+            //             Rock rock = (Rock) actor; // Doug - not sure if this is correct, but it's not red and squigly, so thats a plus
+            //         } else if (actor == "gem") // Doug - red and squigly, hoping to use this logic to do something magical when the player collides with a gem
+            //         {
+            //             Gem gem = (Gem) actor; // Doug - not sure if this is correct, but it's not red and squigly, so thats a plus
+            //         }
                     //Artifact artifact = (Artifact) actor;
                     //string message = artifact.GetMessage();
                    //banner.SetText(message);
-                }
-            } 
+                // }
+            // } 
 
         }
         private void DoOutputs(Cast cast, VideoService video){
