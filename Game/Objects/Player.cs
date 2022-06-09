@@ -5,7 +5,7 @@ namespace greed.Game.Objects
         //construct the player using initial values of location, color, and character
         public Player()
         {
-        actorConstructor(100, 465, 1, "#"); //Zak --starts the player at (0,0) !!! adjust as needed to start the player to start position !!!
+        actorConstructor(100, 465, 1, "#");
         }
     }
 }

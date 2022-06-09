@@ -21,18 +21,15 @@ namespace greed.Game{
             private int height = 480;
             private int frameRate = 15;
             private bool debug = false;
-        public Director(){
-            /*this.keyBoard = keyBoard;
-            this.video = video;
-            this.cast = cast;*/
-           
-            
+            private int rock_number = 0;
+        public Director(){            
         }
 
         public void StartGame(){
             KeyboardServices keyBoard = new KeyboardServices(cellSize);
             VideoService video = new VideoService(caption, width, height, cellSize, frameRate, debug);  
             Cast cast = new Cast();
+
             // create player actor and add to Cast List
             Player player = new Player(); // creates player
             cast.AddActor("Player", player); // adds player to the cast list
@@ -48,21 +45,35 @@ namespace greed.Game{
             }        
         }
         private void GetInputs(Actor player, KeyboardServices keyBoard){
-            // Actor player = cast.GetFirstActor("player"); // pulls player from front of cast list, with appropriate starting attributes
-            //Point velocity = keyBoard.GetDirection();
+
             player.shiftLocation(keyBoard.PlayerDirection(), 0); // Doug - takes keyboard input for player X coordinate shift from KeyboardService
-            //player.SetVelocity(velocity);     // used in Robot finds kitten, but not currently in our actor class
+
         }
         private void DoUpdates(Cast cast, VideoService video){
-            //Actor banner = cast.GetFirstActor("banner"); //Doug - Not certain what to change this too just yet
-            Actor player = cast.GetFirstActor("player");
-            List<Actor> Rocks_Gems = cast.GetActors("artifacts"); 
+
+            // Actor player = cast.GetFirstActor("player");
+            // List<Actor> Rocks_Gems = cast.GetActors("artifacts"); 
+
+            List<Actor> actors = cast.GetAllActors();
+            
+            foreach (Actor actor in actors){
+                if (actor.character != "#"){
+                    actor.shiftLocation(0, 10);
+                }
+                if (actor.location_y > 500){
+                    cast.RemoveActor("Rock", actor);
+                    cast.RemoveActor("Gem", actor);
+                }
+            }
+
+            // Console.WriteLine(actors.Count()); // for testing purposes
+
+            Rock rock = new Rock();
+            cast.AddActor("Rock", rock);
+
+
 
             //banner.SetText(""); //Doug - used in Robot finds kitten, not sure what to replace with,if at all
-            int maxX = video.GetWidth();
-            int maxY = video.GetHeight();
-            //player.MoveNext(maxX, maxY);
-            // player.shiftLocation(maxX, maxY);
 
             // foreach (Actor actor in Rocks_Gems)
             // {

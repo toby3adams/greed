@@ -4,10 +4,10 @@ namespace greed.Game.Objects
     public class Actor //Tyler - I made it public so Keyboard Service can access your class
     {
         //attributes
-        int location_x;
-        int location_y;
+        public int location_x;
+        public int location_y;
         int color;
-        string character = "";
+        public string character = "";
 
         public int FallSpeed = 0;
 
