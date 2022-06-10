@@ -29,6 +29,7 @@ namespace greed.Game{
             KeyboardServices keyBoard = new KeyboardServices(cellSize);
             VideoService video = new VideoService(caption, width, height, cellSize, frameRate, debug);  
             Cast cast = new Cast();
+            ScoreKeeper score = new ScoreKeeper();
 
             // create player actor and add to Cast List
             Player player = new Player(); // creates player
@@ -39,7 +40,7 @@ namespace greed.Game{
                 **************Doug - Im assuming this will be where we will need code for creating new gems and rocks, hoping to dream something up tonight.
                 */
                 GetInputs(player, keyBoard);
-                DoUpdates(cast, video);
+                DoUpdates(player, cast, video, score);
                 DoOutputs(cast, video);
 
             }        
@@ -49,7 +50,7 @@ namespace greed.Game{
             player.shiftLocation(keyBoard.PlayerDirection(), 0); // Doug - takes keyboard input for player X coordinate shift from KeyboardService
 
         }
-        private void DoUpdates(Cast cast, VideoService video){
+        private void DoUpdates(Player player, Cast cast, VideoService video, ScoreKeeper score){
 
             // Actor player = cast.GetFirstActor("player");
             // List<Actor> Rocks_Gems = cast.GetActors("artifacts"); 
@@ -63,6 +64,20 @@ namespace greed.Game{
                 if (actor.location_y > 500){
                     cast.RemoveActor("Rock", actor);
                     cast.RemoveActor("Gem", actor);
+                }
+                else if (actor.location_y <= player.location_y + 8 && actor.location_y >= player.location_y -8) {
+                    if (actor.location_x <= player.location_x + 8 && actor.location_x >= player.location_x -8){
+                        if (actor.character == "@"){
+                            score.game_score -= 100;
+                            Console.WriteLine(score.game_score);
+                        }
+                        else if (actor.character == "*"){
+                            score.game_score += 100;
+                            Console.WriteLine(score.game_score);
+                        }
+                        cast.RemoveActor("Rock", actor);
+                        cast.RemoveActor("Gem", actor);                        
+                    }
                 }
             }
 
@@ -88,29 +103,6 @@ namespace greed.Game{
             else{
                 rock_number = 0;
             }
-
-
-
-
-
-            //banner.SetText(""); //Doug - used in Robot finds kitten, not sure what to replace with,if at all
-
-            // foreach (Actor actor in Rocks_Gems)
-            // {
-            //     if (player.getLocationX().Equals(actor.getLocationX()))
-            //     {
-            //         if(actor == "rock") // Doug - red and squigly, hoping to use this logic to do something magical when the player collides with a gem
-            //         {
-            //             Rock rock = (Rock) actor; // Doug - not sure if this is correct, but it's not red and squigly, so thats a plus
-            //         } else if (actor == "gem") // Doug - red and squigly, hoping to use this logic to do something magical when the player collides with a gem
-            //         {
-            //             Gem gem = (Gem) actor; // Doug - not sure if this is correct, but it's not red and squigly, so thats a plus
-            //         }
-                    //Artifact artifact = (Artifact) actor;
-                    //string message = artifact.GetMessage();
-                   //banner.SetText(message);
-                // }
-            // } 
 
         }
         private void DoOutputs(Cast cast, VideoService video){
