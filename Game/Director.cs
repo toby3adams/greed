@@ -13,8 +13,6 @@ namespace greed.Game{
         //private VideoService video = null;
         //private Cast cast = null;
 
-        Random Random = new Random();
-        private bool Playing = true;
         private int cellSize = 15;
             private string caption = "Greed";
             private int width = 640;

@@ -75,7 +75,7 @@ namespace greed.Game.Objects
         /// <returns>The first actor.</returns>
         public Actor GetFirstActor(string group)
         {
-            Actor result = null;
+            Actor result = new Actor();
             if (actors.ContainsKey(group))
             {
                 if (actors[group].Count > 0)
