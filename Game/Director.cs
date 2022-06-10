@@ -65,21 +65,17 @@ namespace greed.Game{
                     cast.RemoveActor("Rock", actor);
                     cast.RemoveActor("Gem", actor);
                 }
-                else if (actor.location_y <= player.location_y + 8 && actor.location_y >= player.location_y -8) {
+                else if (actor.location_y <= player.location_y + 8 && actor.location_y >= player.location_y -8 && actor.character != "#") {
                     if (actor.location_x <= player.location_x + 8 && actor.location_x >= player.location_x -8){
-                        if (actor.character == "@"){
-                            score.game_score -= 100;
+
+                            score.game_score += actor.value;
                             Console.WriteLine(score.game_score);
+                            cast.RemoveActor("Rock", actor);
+                            cast.RemoveActor("Gem", actor);     
                         }
-                        else if (actor.character == "*"){
-                            score.game_score += 100;
-                            Console.WriteLine(score.game_score);
-                        }
-                        cast.RemoveActor("Rock", actor);
-                        cast.RemoveActor("Gem", actor);                        
+                   
                     }
                 }
-            }
 
             // Console.WriteLine(actors.Count()); // for testing purposes
 

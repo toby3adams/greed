@@ -11,7 +11,7 @@ namespace greed.Game.Objects
             Random random = new Random();
             int x = random.Next(0, 625); //Zak- make sure to adjust the range to be within the bounds of the screen.
             shiftLocation(x, 0); //Zak-this will move the rock to the random x location
-            
+            this.value = -100;
             this.FallSpeed = Speed;
         }
     }

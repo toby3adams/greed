@@ -6,7 +6,7 @@ namespace greed.Game.Objects
     {
         //construct the player using initial values of location, color, and character
 
-        private int Color =0;
+        private int gem_color =0;
         private int Speed = 0;
 
         public Gem()
@@ -16,26 +16,30 @@ namespace greed.Game.Objects
 
             if (RandColor == 0 )                                
             { //White
-                Color = 1;   
-                this.FallSpeed = 15;           
+                this.gem_color = 1;   
+                this.FallSpeed = 15;
+                this.value = 150;           
             }
             else if (RandColor==1)
             { //Red
-                Color = 3;              
+                gem_color = 3;              
                 this.FallSpeed = 12;
+                this.value = 100;
             }
             else if (RandColor==2)
             { //Green
-                Color = 4;              
+                gem_color = 4;              
                 this.FallSpeed = 10;
+                this.value = 80;
             }
             else if (RandColor==3)
             { //Blue
-                Color = 5;
+                gem_color = 5;
                 this.FallSpeed = 8;
+                this.value = 60;
             }
             
-            actorConstructor(0, 0, Color, "*"); //Zak- Make sure to adjust the y location to the top of the screen.           
+            actorConstructor(0, 0, gem_color, "*"); //Zak- Make sure to adjust the y location to the top of the screen.           
             int x = random.Next(0, 625); //Zak- make sure to adjust the range to be within the bounds of the screen.
             shiftLocation(x, 0); //Zak-this will move the rock to the random x location
 

@@ -6,10 +6,11 @@ namespace greed.Game.Objects
         //attributes
         public int location_x;
         public int location_y;
-        int color;
+        public int color;
         public string character = "";
 
         public int FallSpeed = 0;
+        public int value;
 
         //constructor
         public void actorConstructor(int location_x, int location_y, int color, string character)
