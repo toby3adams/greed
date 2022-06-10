@@ -3,7 +3,7 @@ namespace greed.Game.Objects
     class Rock : Actor
     {
         //construct the player using initial values of location, color, and character
-        public int Speed = -1;
+        public int Speed = 8;
         public Rock()
         {
 

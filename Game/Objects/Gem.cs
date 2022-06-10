@@ -7,7 +7,7 @@ namespace greed.Game.Objects
         //construct the player using initial values of location, color, and character
 
         private int Color =0;
-        private int Speed = -1;
+        private int Speed = 0;
 
         public Gem()
         {
@@ -16,22 +16,23 @@ namespace greed.Game.Objects
 
             if (RandColor == 0 )                                
             { //White
-                Color = 1;              
+                Color = 1;   
+                this.FallSpeed = 15;           
             }
             else if (RandColor==1)
             { //Red
                 Color = 3;              
-                this.Speed = -15;
+                this.FallSpeed = 12;
             }
             else if (RandColor==2)
             { //Green
                 Color = 4;              
-                this.Speed = -10;
+                this.FallSpeed = 10;
             }
             else if (RandColor==3)
             { //Blue
                 Color = 5;
-                this.Speed = -5;
+                this.FallSpeed = 8;
             }
             
             actorConstructor(0, 0, Color, "*"); //Zak- Make sure to adjust the y location to the top of the screen.           

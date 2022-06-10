@@ -58,7 +58,7 @@ namespace greed.Game{
             
             foreach (Actor actor in actors){
                 if (actor.character != "#"){
-                    actor.shiftLocation(0, 10);
+                    actor.shiftLocation(0, actor.FallSpeed);
                 }
                 if (actor.location_y > 500){
                     cast.RemoveActor("Rock", actor);
@@ -68,11 +68,28 @@ namespace greed.Game{
 
             // Console.WriteLine(actors.Count()); // for testing purposes
 
-            Rock rock = new Rock();
-            cast.AddActor("Rock", rock);
 
-            Gem gem = new Gem();
-            cast.AddActor("Gem",gem);
+                // determines the pace that rocks or gems spawn per game loop
+            if (rock_number == 0 || rock_number == 1 || rock_number == 2){
+                Rock rock = new Rock();
+                cast.AddActor("Rock", rock);
+
+                rock_number += 1;
+            }
+            else if (rock_number == 3){
+                Gem gem = new Gem();
+                cast.AddActor("Gem",gem);
+
+                rock_number += 1;                
+            }
+            else if (rock_number == 4){
+                rock_number += 1;
+            }
+            else{
+                rock_number = 0;
+            }
+
+
 
 
 
