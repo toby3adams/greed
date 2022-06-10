@@ -13,13 +13,13 @@ namespace greed.Game{
         //private VideoService video = null;
         //private Cast cast = null;
 
-        private int cellSize = 15;
-            private string caption = "Greed";
-            private int width = 640;
-            private int height = 480;
-            private int frameRate = 15;
-            private bool debug = false;
-            private int rock_number = 0;
+        private int cellSize = 5;
+        private string caption = "Greed";
+        private int width = 640;
+        private int height = 480;
+        private int frameRate = 50;
+        private bool debug = false;
+        private int rock_number = 0;
         public Director(){            
         }
 
@@ -78,23 +78,23 @@ namespace greed.Game{
 
 
                 // determines the pace that rocks or gems spawn per game loop
-            if (rock_number == 0 || rock_number == 1 || rock_number == 2){
+            if (rock_number == 0 || rock_number == 6 || rock_number == 12){
                 Rock rock = new Rock();
                 cast.AddActor("Rock", rock);
 
                 rock_number += 1;
             }
-            else if (rock_number == 3){
+            else if (rock_number == 5){
                 Gem gem = new Gem();
                 cast.AddActor("Gem",gem);
 
                 rock_number += 1;                
             }
-            else if (rock_number == 4){
-                rock_number += 1;
+            else if (rock_number == 16){
+                rock_number = 0;
             }
             else{
-                rock_number = 0;
+                rock_number += 1;
             }
 
             score.update_score();

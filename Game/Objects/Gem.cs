@@ -17,25 +17,25 @@ namespace greed.Game.Objects
             if (RandColor == 0 )                                
             { //White
                 this.gem_color = 1;   
-                this.FallSpeed = 15;
+                this.FallSpeed = 7;
                 this.value = 150;           
             }
             else if (RandColor==1)
             { //Red
                 gem_color = 3;              
-                this.FallSpeed = 12;
+                this.FallSpeed = 6;
                 this.value = 100;
             }
             else if (RandColor==2)
             { //Green
                 gem_color = 4;              
-                this.FallSpeed = 10;
+                this.FallSpeed = 5;
                 this.value = 80;
             }
             else if (RandColor==3)
             { //Blue
                 gem_color = 5;
-                this.FallSpeed = 8;
+                this.FallSpeed = 4;
                 this.value = 60;
             }
             
