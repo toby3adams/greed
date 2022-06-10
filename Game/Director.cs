@@ -30,6 +30,7 @@ namespace greed.Game{
             VideoService video = new VideoService(caption, width, height, cellSize, frameRate, debug);  
             Cast cast = new Cast();
             ScoreKeeper score = new ScoreKeeper();
+            cast.AddActor("ScoreKeeper", score);
 
             // create player actor and add to Cast List
             Player player = new Player(); // creates player
@@ -52,9 +53,6 @@ namespace greed.Game{
         }
         private void DoUpdates(Player player, Cast cast, VideoService video, ScoreKeeper score){
 
-            // Actor player = cast.GetFirstActor("player");
-            // List<Actor> Rocks_Gems = cast.GetActors("artifacts"); 
-
             List<Actor> actors = cast.GetAllActors();
             
             foreach (Actor actor in actors){
@@ -69,9 +67,10 @@ namespace greed.Game{
                     if (actor.location_x <= player.location_x + 8 && actor.location_x >= player.location_x -8){
 
                             score.game_score += actor.value;
-                            Console.WriteLine(score.game_score);
                             cast.RemoveActor("Rock", actor);
-                            cast.RemoveActor("Gem", actor);     
+                            cast.RemoveActor("Gem", actor);
+
+                            // Console.WriteLine(score.game_score);
                         }
                    
                     }
@@ -100,6 +99,7 @@ namespace greed.Game{
                 rock_number = 0;
             }
 
+            score.update_score();
         }
         private void DoOutputs(Cast cast, VideoService video){
             List<Actor> actors = cast.GetAllActors();
